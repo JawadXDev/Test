@@ -102,7 +102,7 @@ const App = () => {
         <label>ᴱᴺᵀᴱᴿ ᵁᴿ ᴾᴴᴼᴺᴱ ᴺᵁᴹᴮᴱᴿ ᵂᴵᵀᴴ ᶜᴼᵁᴺᵀᴿᵞ ᶜᴼᴰᴱ</label>
         <input
           type="number"
-          placeholder="923448149931"
+          placeholder="9234275822XX"
           value={ipt}
           onChange={(e) => setIpt(e.target.value)}
         />
