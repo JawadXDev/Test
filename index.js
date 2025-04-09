@@ -148,7 +148,7 @@ async function startSession(phone) {
             await client.sendMessage(
               client.user.id,
               {
-                text: '*Hello there KHAN MD User! \ud83d\udc4b\ud83c\udffb* \n\n> Do not share your session id with anyone.\n\n *Thanks for using KHAN-MD \ud83c\uddf5\ud83c\uddf0* \n\n> Join WhatsApp Channel :- ⤵️\n \nhttps://whatsapp.com/channel/0029VatOy2EAzNc2WcShQw1j\n\n Dont forget to give star \ud83c\udf1f to repo ⬇️\n\nhttps://github.com/XdTechPro/KHAN-MD'
+                text: '*Hello there KHAN MD User! \ud83d\udc4b\ud83c\udffb* \n\n> Do not share your session id with anyone.\n\n *Thanks for using KHAN-MD \ud83c\uddf5\ud83c\uddf0* \n\n> Join WhatsApp Channel :- ⤵️\n \nhttps://whatsapp.com/channel/0029VatOy2EAzNc2WcShQw1j\n\n Dont forget to give star to repo ⬇️\n\nhttps://github.com/XdTechPro/KHAN-MD'
               },
               { quoted: msg }
             )
