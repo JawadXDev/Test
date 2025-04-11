@@ -1,2 +1,1 @@
-# Express-pairing-code
-Baileys Session Gen Using Express Pair JawadTechX 
+# Testing Bot Soon 
