@@ -148,40 +148,37 @@ async function startnigg(phone) {
         }, 3000)
       }
 
-      jawad.ev.on('creds.update', saveCreds)
+jawad.ev.on('creds.update', saveCreds)
 
-      jawad.ev.on('connection.update', async update => {
-        const { connection, lastDisconnect } = update
+jawad.ev.on('connection.update', async update => {
+  const { connection, lastDisconnect } = update
 
-if (connection === 'open') {
-  await delay(10000)
-  let data1 = fs.createReadStream(`${sessionFolder}/creds.json`);
-  const output = await upload(data1, createRandomId() + '.json');
-  let sessi = output.includes('https://mega.nz/file/') ? 
-    'KHAN-MD~' + output.split('https://mega.nz/file/')[1] : 
-    'Error Uploading to Mega';
-  await delay(2000)
-  let guru = await jawad.sendMessage(jawad.user.id, { text: sessi })
-  await delay(2000)
-  await jawad.sendMessage(
-    jawad.user.id,
-    {
-      text: '*Hello there KHAN MD User! \ud83d\udc4b\ud83c\udffb* \n\n> Do not share your session id with anyone.\n\n *Thanks for using KHAN-MD \ud83c\uddf5\ud83c\uddf0* \n\n> Join WhatsApp Channel :- ⤵️\n \nhttps://whatsapp.com/channel/0029VatOy2EAzNc2WcShQw1j\n\n Dont forget to give star \ud83c\udf1f to repo ⬇️\n\nhttps://github.com/XdTechPro/KHAN-MD',
-    },
-    { quoted: guru }
-  )
-}
+  if (connection === 'open') {
+    await delay(10000)
+    let data1 = fs.createReadStream(`${sessionFolder}/creds.json`);
+    const output = await upload(data1, createRandomId() + '.json');
+    let sessi = output.includes('https://mega.nz/file/') ? 'KHAN-MD~' + output.split('https://mega.nz/file/')[1] : 'Error Uploading to Mega';
+    await delay(2000)
+    let guru = await jawad.sendMessage(jawad.user.id, { text: sessi })
+    await delay(2000)
+    await jawad.sendMessage(
+      jawad.user.id,
+      {
+        text: '*Hello there KHAN MD User! \ud83d\udc4b\ud83c\udffb* \n\n> Do not share your session id with anyone.\n\n *Thanks for using KHAN-MD \ud83c\uddf5\ud83c\uddf0* \n\n> Join WhatsApp Channel :- ⤵️\n \nhttps://whatsapp.com/channel/0029VatOy2EAzNc2WcShQw1j\n\n Dont forget to give star to repo ⬇️\n\nhttps://github.com/XdTechPro/KHAN-MD',
+      },
+      { quoted: guru }
+    )
 
-          console.log('Connected to WhatsApp Servers')
+    console.log('Connected to WhatsApp Servers')
 
-          try {
-            deleteSessionFolder()
-          } catch (error) {
-            console.error('Error deleting session folder:', error)
-          }
+    try {
+      deleteSessionFolder()
+    } catch (error) {
+      console.error('Error deleting session folder:', error)
+    }
 
-          process.send('reset')
-        }
+    process.send('reset')
+  }
 
         if (connection === 'close') {
           let reason = new Boom(lastDisconnect?.error)?.output.statusCode
